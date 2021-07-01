@@ -1,0 +1,74 @@
+body{
+background-color:#00adff8c;
+}
+
+.cont{
+margin-left:300px;
+background-color:white;
+width:50%;
+height:400px;
+}
+
+h1{
+text-align:center;
+font-family: 'Cormorant Garamond',Georgia,"Times New Roman",serif;
+    	font-size: 40px;
+
+}
+
+
+hr{
+width:400px;
+
+}
+
+h2{
+text-align:center;
+font-family: 'Cormorant Garamond',Georgia,"Times New Roman",serif;
+    	font-size: 15px;
+
+}
+#inputfield{
+width:300px;
+height:25px;
+border:none;
+}
+
+#addtodo{
+
+width:30px;
+border:none;
+}
+
+#todocontainer{
+padding-top:20px;
+	line-height: 2em;
+
+}
+button{
+border:none;
+width:100px;
+color:#00adff8c;
+background-color:white;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .cont{
+  margin-left:40px;
+  width:80%;
+height:400px;
+  }
+  #inputfield{
+width:200px;
+height:25px;
+border:none;
+}
+
+
+hr{
+width:200px;
+
+}
+
+  }

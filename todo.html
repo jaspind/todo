@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>todo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="list.css">
+<script>
+
+window.onload = function() {
+  show();
+};
+
+	var addtobutton =document.getElementById('addtodo');
+	var input =document.getElementById('InputField');
+
+function GetValue(){
+addtask = inputfield.value;
+	let know= localStorage.getItem("localtask");
+	if (know == null){
+		tobj =[];
+	}
+	else{
+		tobj =JSON.parse(know);
+	}
+	tobj.push(addtask);
+	localStorage.setItem("localtask",JSON.stringify(tobj));
+	show();
+}
+
+
+ 	function show()
+{
+	let know= localStorage.getItem("localtask");
+	if (know == null){
+		tobj =[];
+	}
+	else{
+		tobj =JSON.parse(know);
+	}
+	
+	let sho = '';
+	let added = document.getElementById("todocontainer");
+	tobj.forEach((item, index) => {
+	   sho += `<tr>
+				<td>${index+1}</td>
+				<td>${item} </td>
+				
+				<td><button onclick="dlte(${index})"><i class="far fa-trash-alt"></i></button></td>
+			</tr>`;
+	
+	});
+	
+	added.innerHTML =sho;
+}
+
+function dlte(index)
+{
+	let know= localStorage.getItem("localtask");
+	let tobj =JSON.parse(know);
+	tobj.splice(index, 1);
+	localStorage.setItem("localtask",JSON.stringify(tobj));
+	show();
+}
+
+</script>
+
+<body>
+  <div class="container-responsive">
+    <div class="cont">
+  <h1>MY LIST</h1>
+  <h2>HOME | ABOUT </h2>
+  <hr>
+
+ <button id="addtodo" onclick="GetValue()"><i class="fas fa-plus"></i></button>
+  <input type="text" id="inputfield" placeholder="Add Item" required>
+
+	
+	<table id="todocontainer">
+	<tr>
+	<th>list</th>
+	
+	</tr>
+	</table>
+	</div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
