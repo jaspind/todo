@@ -6,7 +6,7 @@ background-color:#00adff8c;
 margin-left:300px;
 background-color:white;
 width:50%;
-height:400px;
+height:auto;
 }
 
 h1{
@@ -57,7 +57,7 @@ background-color:white;
   .cont{
   margin-left:40px;
   width:80%;
-height:400px;
+height:auto;
   }
   #inputfield{
 width:200px;

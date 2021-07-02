@@ -16,7 +16,10 @@ window.onload = function() {
 	var input =document.getElementById('InputField');
 
 function GetValue(){
-addtask = inputfield.value;
+	addtask = inputfield.value;
+	
+	if(addtask.trim()!=0){
+	
 	let know= localStorage.getItem("localtask");
 	if (know == null){
 		tobj =[];
@@ -26,7 +29,13 @@ addtask = inputfield.value;
 	}
 	tobj.push(addtask);
 	localStorage.setItem("localtask",JSON.stringify(tobj));
+
+	}
+	
+	inputfield.value='';
+		
 	show();
+	
 }
 
 
@@ -53,6 +62,7 @@ addtask = inputfield.value;
 	});
 	
 	added.innerHTML =sho;
+
 }
 
 function dlte(index)
